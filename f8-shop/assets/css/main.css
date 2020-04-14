@@ -1,3 +1,8 @@
+.app {
+    overflow: hidden; /* Mất phần màu trắng  bên phải trong mobile */
+}
+
+
 .header{
     height: var(--header-height);
     background-image: linear-gradient(0, #fe6433, #f53e2d);
@@ -240,6 +245,56 @@
 
 
     z-index: 1;
+}
+
+/* Header sort bar */
+.header__sort-bar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var(--header-sort-bar-height);
+    background-color: var(--white-color);
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    display: none;
+}
+
+.header__sort-item {
+    flex: 1;
+}
+
+.header__sort-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    height: 100%;
+    line-height: var(--header-sort-bar-height);
+    text-align: center;
+    position: relative;
+}
+
+/* Skill lâu lăm =))) */
+.header__sort-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 60%;
+    border-left: 1px solid #e5e5e5;
+    transform: translateY(-50%);
+}
+
+.header__sort-item--active .header__sort-link {
+    color: var(--primary-color);
+}
+
+.header__sort-item:first-child .header__sort-link::before{
+    display: none;
 }
 
 /* Tạo dấu mũi tên phía dưới Thông Báo */
@@ -493,8 +548,25 @@
     margin: 0 8px;
 }
 
+.header__mobile-search {
+    padding: 0 12px;
+    display: none;
+}
+
+.header__mobile-search-icon {
+    font-size: 2.6rem;
+    color: var(--white-color);
+}
+
 .header__logo {
     width: 200px;
+}
+
+.header__logo-link {
+    color: transparent;
+    text-decoration: none;
+    display: block;
+    line-height: 0;
 }
 
 .header__logo-img {
@@ -510,6 +582,10 @@
     align-items: center;
 }
 
+.header__search-checkbox:checked ~  .header__search {
+    display: flex;
+}
+
 .header__cart {
     width: 150px;
     text-align: center;
@@ -520,6 +596,7 @@
     display: inline-block;
     padding: 0 8px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-wrap:hover .header__cart-list {
@@ -608,7 +685,7 @@
 .header__cart-list-item {
     padding-left: 0;
     list-style: none;
-    height: 56vh; /* 70% chiều cao trình duyệt */
+    max-height: 56vh; /* 70% chiều cao trình duyệt */
     overflow-y: scroll; /* Chỉ hiển thị thanh kéo dọc */
 }
 
@@ -940,8 +1017,70 @@
     color: var(--primary-color);
 }
 
-/* Home - số lượng các sản phẩm */
+/* Mobile Category */
+.mobile-category {
+    display: none;
+}
 
+.mobile-category__list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto; /* Nếu vượt quá widtd thì sẽ cho kéo */
+}
+
+/* Ẩn thanh cuộn phía dưới */
+.mobile-category__list::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-category__item {
+    flex-shrink: 0; /* Đưa hết chữ lên ngang */
+    margin-right: 10px;
+}
+
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link  {
+    background-color: #87afd8;
+}
+
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link  {
+    background-color: #76c9bd;
+}
+
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link  {
+    background-color: #88cf81;
+}
+
+.mobile-category__link {
+    --line-height: 2rem;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    line-height: var(--line-height);
+    text-align: center;
+    width: 110px;
+    height: calc(var(--line-height) * 2);
+    overflow: hidden;
+    display: block;
+    border-radius: 4px;
+    font-weight: 300;
+    padding: 0 6px;
+
+    /* Bỏ đi các hiệu ứng bấm của thẻ a */
+    user-select: none;
+    -webkit-user-select: none;
+    /* -webkit-tap-highlight-color: transparent; */
+
+    /* Làm dấu ... */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+
+
+/* Home - số lượng các sản phẩm */
 
 .home-filter {
     background-color: rgba(0, 0, 0, 0.04);
@@ -1215,6 +1354,7 @@ i.home-product-item__like-icon-fill {
 
 .home-product__pagination {
     margin: 48px 0 32px 0;
+    padding-left: 0;
 }
 
 /* footer */

@@ -9,6 +9,7 @@
     --header-height: 120px;
     --navbar-height: 34px;
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
 }
 
 *{
@@ -25,21 +26,6 @@ html {
 }
 
 /* Resposive */
-
-.grid{
-    /* 
-        Kích thước tối đa của màn hình là 1200
-        Nếu nhỏ hơn 1200 thì max-width sẽ được tác dụng 
-     */
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.grid__full-width {
-    /* Nếu không muốn sử dụng width 1200 thì sẽ sử dụng cái này */
-    width: 100%;
-}
 
 .grid__row{ 
     display: flex;  /* Nằm cùng trên 1 hàng ngang */

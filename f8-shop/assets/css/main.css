@@ -1084,7 +1084,7 @@
 
 .home-filter {
     background-color: rgba(0, 0, 0, 0.04);
-    align-items: center; /* Căn zữa khunz home-filter */
+    align-items: center; /* Căn giữa khung home-filter */
     display: flex;
     padding: 12px 22px;
     border-radius: 2px;
@@ -1269,9 +1269,7 @@ i.home-product-item__like-icon-fill {
     font-weight: 300;
 }
 
-.home-product-item__brand {
 
-}
 
 .home-product-item__origin-name {
     margin-left: auto;

@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    width: 400px;
+    height: 200px;
+    border: 2px solid black;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+
+.move {
+    transform: translateX(400px);
+    transition: 1s;
+}

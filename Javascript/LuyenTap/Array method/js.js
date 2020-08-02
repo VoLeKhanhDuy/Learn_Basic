@@ -1,6 +1,6 @@
 /*
-    concat() : nối 2 mảng (mảgn ban đầu không bị thay đổi)
-    push() : trả về độ dài mới của mảgn khi thêm 1 phần tử vào (mảng ban đầu bị thay đổi)
+    concat() : nối 2 mảng (mảng ban đầu không bị thay đổi)
+    push() : trả về độ dài mới của mảng khi thêm 1 phần tử vào (mảng ban đầu bị thay đổi)
     pop() : lấy ra phần tử cuối cùng (mảng ban đầu bị thay đổi)
     shift() : đẩy phần tử đầu tiên của mảng ra khỏi mảng (mảng ban đầu bị thay đổi)
     unshift() : đưa phần tử mới vào đầu mảng (trả về độ dài mới của mảng, mảng ban đầu bị thay đổi)  

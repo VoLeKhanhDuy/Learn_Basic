@@ -33,7 +33,6 @@ body {
     color: $text-color;
     line-height: 1.4;
     font-weight: 400;
-    padding-bottom: 200px;
 }
 a {
     text-decoration: none;
@@ -339,5 +338,252 @@ a {
     text-overflow: ellipsis;
     &--2 {
         -webkit-line-clamp: 2;
+    }
+}
+
+.partner {
+    margin-bottom: 190px;
+    &__container {
+        max-width: 830px;
+        text-align: center;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 70px;
+        padding-bottom: 70px;
+        border-bottom: 1px solid currentColor;
+    }
+    &__list {
+        @include flex(center, space-between)
+    }
+}
+
+.connect {
+    text-align: center;
+    margin-bottom: 170px;
+    &__title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 60px;
+    }
+    &__notice {
+        font-size: 18px;
+        font-weight: bold;
+        span {
+            color: $primary-color;
+        }
+    }
+    &__list {
+        @include flex(stretch, space-between); //
+    }
+    &__item {
+        width: calc(25% - 22.5px); // 22.5px = 90/4, 90 là khoảng cách giữa các ảnh: có 3 ảnh mỗi ảnh 30, 4 là số ảnh
+    }
+}
+
+.subcribe {
+   /*
+        padding: cách trên
+        border --------------
+        margin: cách dưới
+   */
+    margin-bottom: 50px;
+    &__container {
+        @include flex(flex-start, space-between);
+        padding-bottom: 80px ;
+        border-bottom: 2px solid;
+    }
+    &__title,
+    &__info {
+        width: 50%;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        min-width: 430px;
+    }
+    &__form {
+        background-color: #f2f1f6;
+        @include flex(center, space-between);
+        padding: 20px;
+        margin-bottom: 35px;
+    }
+    &__input,
+    &__button {
+        padding: 0;
+    }
+    &__input {
+        border: 0;
+        outline: none;
+        background-color: transparent;
+        font-size: 14px;
+        font-family: "Poppins";
+        flex: 1;
+        padding-right: 15px;
+    }
+    &__button {
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: "Poppins";
+    }
+    &__social i {
+        margin-left: 40px;
+        font-size: 20px; 
+    }
+}
+
+.footer {
+    &__container {
+        @include flex(flex-start, space-between);    
+    }
+    &__item {
+        width: 25%;
+    }
+    &__link {
+        color: $text-color;
+        font-size: 14px;
+        display: block; // nằm trên 1 hàng
+        margin-bottom: 30px;
+
+        width: fit-content; 
+    }
+}
+
+
+@media screen and (max-width: 1023px) {
+    .banner {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        &__heading {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        &__desc {
+            font-size: 16px;
+        }
+        &__button > .btn {
+            font-size: 14px;
+        }
+    }
+
+    .category {
+        &__item {
+            width: calc(50% - 22.5px);
+            margin-bottom: 25px;
+        }
+    }
+
+    .feature {
+        padding-top: 100px;
+        &__item {
+            flex-direction: column;
+            margin-bottom: 80px;
+
+            &:nth-child(even) {
+                flex-direction: column;
+                .feature__info {
+                    padding: 0;
+                }
+            }
+            &:nth-child(odd) .feature__info {
+                padding: 0;
+            }
+        }
+
+        &__image,
+        &__info {
+            width: 100%;
+        }
+
+        &__image img {
+            margin: 0 auto 50px;
+        }
+    }
+
+    .partner {
+        &__title {
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header__menu {
+        display: none;
+    }
+
+    .category {
+        &__item {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        &__image {
+            height: 150px;
+        }
+    }
+
+    .partner {
+        margin-bottom: 50px;
+        &__list {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__item {
+            width: 50%;
+            margin-bottom: 20px;
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .connect {
+        margin-bottom: 50px;
+        &__list {
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: calc(50% - 10px);
+            margin-bottom: 20px;
+        }
+    }
+
+    .subcribe {
+        &__container {
+            flex-direction: column;
+        }
+        &__title {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &__info {
+            width: 100%;
+        }
+    }
+
+    .footer {
+        &__container {
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 479) {
+    &__heading {
+        font-size: 30px;
+    }
+    .banner {
+        &__button > .btn {
+            font-size: 12px;
+        }
     }
 }

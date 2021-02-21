@@ -1,7 +1,7 @@
 var firstName = "Khanh";
 var lastName = "Duy";
 
-console.log(`Ten day du la: ${firstName} ${lastName}`);
+console.log(`Ten day du la: ${firstName} ${lastName}`); // Template String
 
 //Làm việc với chuỗi
 /* find index */

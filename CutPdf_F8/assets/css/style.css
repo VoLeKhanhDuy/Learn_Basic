@@ -1,0 +1,34 @@
+/* Reset CSS */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+/*
+- Vị trí
+- Kích thước
+- Màu sắc
+- Kiểu dáng (tròn, vuông,...)
+*/
+
+#main {
+
+}
+
+#header {
+    height: 46px;
+    background: #000;
+}
+
+#slider {
+
+}
+
+#content {
+
+}
+
+#footer {
+
+}

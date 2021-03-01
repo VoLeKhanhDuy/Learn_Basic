@@ -1,0 +1,15 @@
+Những thành phần thường gặp ở giao diện website:
+- Header
+- Navigation (Điều hướng)
+- Breadcrumb VD: Khóa học > HTML & CSS > ... > ...
+- Sidebar (Phần menu)
+- Slider
+- Content
+- Banner (Quảng cáo)
+- Footer
+
+Phân tích
+- Header
+- Slider
+- Content
+- Footer

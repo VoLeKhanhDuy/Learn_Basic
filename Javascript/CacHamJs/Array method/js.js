@@ -1,17 +1,63 @@
 /*
     concat() : nối 2 mảng (mảng ban đầu không bị thay đổi)
-    push() : trả về độ dài mới của mảng khi thêm 1 phần tử vào (mảng ban đầu bị thay đổi)
-    pop() : lấy ra phần tử cuối cùng (mảng ban đầu bị thay đổi)
+    push() : thêm một hoặc nhiều phần tử vào cuối mảng và trả về ĐỘ DÀI mới của mảng (mảng ban đầu bị thay đổi)
+    pop() : xóa phần tử cuối mảng và trả về PHẦN TỬ ĐÃ XÓA  (mảng ban đầu bị thay đổi)
     shift() : đẩy phần tử đầu tiên của mảng ra khỏi mảng (mảng ban đầu bị thay đổi)
-    unshift() : đưa phần tử mới vào đầu mảng (trả về độ dài mới của mảng, mảng ban đầu bị thay đổi)  
+    unshift() : đưa phần tử mới vào đầu mảng (trả về độ dài mới của mảng, mảng ban đầu bị thay đổi) 
+    toString() : chuyển array sang chuỗi 
+    join() : chuyển các phần tử trong mảng thành chuỗi
+    splice(vị_trí_đặt_con_trỏ, số_lượng_phần_tử_muốn_xóa)
+    splice(vị_trí_đặt_con_trỏ, 0, 'Chuỗi_muốn_chèn_vào') : chèn hoặc thay đổi một phần tử cho mảng
+    slice(vị_trí_bắt_đầu_cắt, vị_trí_kết_thúc_cắt) : cắt phần tử của mảng
 */
+
+
+var courses = [
+    {
+        id: 1,
+        name: 'PHP',
+        coin: 100
+    },
+    {
+        id: 2,
+        name: 'Java',
+        coin: 0
+    },
+    {
+        id: 3,
+        name: 'JS',
+        coin: 100
+    },
+    {
+        id: 4,
+        name: 'Ruby',
+        coin: 0
+    },
+];
+
+/* forEach */
+courses.forEach(function(course, index) { // duyệt qua từng phần tử của mảng
+    console.log(index, course);
+});
+/* every: kiểm tra tất cả phần tử trong mảng thỏa điều kiện nào đó (trả về Bool) */
+var isFreeE = courses.every(function(course, index) { 
+    return course.coin === 0; // nó sẽ kiểm tra từng phần tử của mảng đến khi có điều kiện sai thì trả ra False
+});
+/* some: kiểm tra MỘT phần tử trong mảng thỏa điều kiện thì trả về là True (trả về Bool) */
+var isFreeS = courses.some(function(course, index) { 
+    return course.coin === 0; // kiểm tra từng phần tử trong mảng, cái nào thỏa điều kiện thì trả ra True
+});
+
+
+
+Array.isArray(); // Kiểm tra có phải là một mảng hay không.
 
 var a = [1, 2, 3];
 var b = [10, 20];
 var c = 5;
 a.concat(b);    // => [1, 2, 3, 10, 20]
 a.push(c);      // => 4 
-a.pop();        // => 3 . Vì 3 là phần tử cuối cùn tron mản a
+a.pop();        // => 3 . Vì 3 là phần tử cuối cùng trong mảng a
 a.shift();      // => 1
 a.unshift(5);   // => 4
 //-----------------------------------------------------------------------------------------
@@ -45,7 +91,7 @@ console.log('-------------------------');
 
 /*
     filter: hiểu như một cái màn lọc. Những cái không đủ điều kiện sẽ không được đi qua màn lọc đó
-    Trả về giá trị thỏa điều kiện
+    Trả về CÁC GIÁ TRỊ thỏa điều kiện
 */
 var numbers_fil = [1, 2, 3, 4];
 numbers_fil.filter(function(x) { // x: đại diện từng phần tử trong mảng numbers_fil
@@ -58,10 +104,10 @@ console.log('-------------------------');
 //-----------------------------------------------------------------------------------------
 
 /*
-    find: trả về một giá trị nào đó thỏa điều kiện và dừng lại không chạy tiếp nữa.
+    find: trả về một giá trị nào đó thỏa điều kiện và dừng lại không chạy tiếp nữa. (trả về 1 thằng thôi)
 */
 var numbers_find = [1, 2, 3, 4];
-numbers_find.filter(function(x) { // x: đại diện từng phần tử trong mảng numbers_find
+numbers_find.find(function(x) { // x: đại diện từng phần tử trong mảng numbers_find
     x % 2 === 0; // xét mảng numbers_find nếu giá trị nào chia hết cho 2 thì sẽ nhận và dừng vòng lặp
 });
 console.log(numbers_find); // => 2
@@ -71,12 +117,15 @@ console.log('-------------------------');
 //-----------------------------------------------------------------------------------------
 
 /*
-    reduce(): 
+    reduce(): nhận về một kết quả cuối cùng sau khi thực hiện tính toán trong một mảng
 */
 var numbers_reduce = [1, 2, 3, 4];
 numbers_reduce.reduce(function(a, b) { // lấy 1 + 2 = 3 sau đó lấy 3 + 3 = 6 sau đó lấy 6 + 4 = 10
     return a + b;
 });
+// tham số của function: 
+//  - tham số 1 là kết quả của bước trước đó
+//  - tham số 2 là giá trị hiện tại
 //BT dùng reduce tính tổng của đơn hàng
 var orders = [
     { name: 'A', quantity: 2, unitPrice: 100 },

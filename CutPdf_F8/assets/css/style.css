@@ -1,16 +1,14 @@
 /* Reset CSS */
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 } 
-/*
-- Vị trí
-- Kích thước
-- Màu sắc
-- Kiểu dáng (tròn, vuông,...)
-*/
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 
 #main {
 
@@ -21,8 +19,49 @@
     background: #000;
 }
 
-#slider {
+#nav {
 
+}
+
+#nav li {
+    display: inline-block;
+    position: relative;
+}
+
+#nav > li > a {
+    color: #fff;
+}
+
+#nav li a {
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-block;
+}
+
+#nav > li:hover > a {
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    /* display: none; */
+    position: absolute;
+    background: #fff;
+}
+
+#nav .subnav a {
+    color: #000;
+}
+
+#nav .subnav li:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+#slider {
+    min-height: 500px;
+    background: #333;
 }
 
 #content {

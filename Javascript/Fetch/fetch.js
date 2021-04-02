@@ -6,7 +6,7 @@
 var postAPI = 'https://jsonplaceholder.typicode.com/posts';
 
 fetch(postAPI)
-    .then(response => response.json())
+    .then(response => response.json()) // dòng này kiểu như json.parse
     .then(function(posts) { // post: là một json nhận từ phía then nằm trên
         var htmls = posts.map(function(post) {
             return `<li>
@@ -17,3 +17,5 @@ fetch(postAPI)
         var html = htmls.join(''); // Do hàm map trả về mảng nên cần sử dụng join để nối chuỗi
         document.getElementById('post-block').innerHTML = html;
     })
+
+//Fake API <-> Mock API

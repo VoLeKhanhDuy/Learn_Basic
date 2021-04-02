@@ -39,7 +39,7 @@ function createCourses(data, callback) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data) // data: là dữ liệu gửi đi
     };
     fetch(courseApi, options)
         .then(response => response.json())
@@ -66,6 +66,7 @@ function handleDeleteCourse(id)
 }
 
 function renderCourses(courses) {
+
     var listCoursesBlock = document.querySelector('#list-courses');
 
     var htmls = courses.map(function(course) {
@@ -84,8 +85,9 @@ function handleCreateForm() {
     var createBtn = document.querySelector('#create');
 
     createBtn.onclick = function() {
-        var name = document.querySelector('input[name="name"]').value;
-        var description = document.querySelector('input[name="description"]').value;
+
+        var name = document.querySelector('input[name="name"]').value; // lấy value của name
+        var description = document.querySelector('input[name="description"]').value; // lấy value của desciption
 
         var formData = {
             name: name,

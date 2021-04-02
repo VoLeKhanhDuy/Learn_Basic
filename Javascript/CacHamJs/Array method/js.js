@@ -63,7 +63,7 @@ a.unshift(5);   // => 4
 //-----------------------------------------------------------------------------------------
 /*
     map() : biến đổi 1 cái gì đó thành 1 cái gì đó (biến đổi các phần tử trong mảng đấy thành các phần tử mới)
-    Trả về một giá trị mới
+    Trả về một mảng mới
 */
 var numbers_map = [1, 2, 3, 4];
 var squaredNumbers = numbers_map.map(function(x) { // x: đại diện từng phần tử trong mảng numbers
@@ -198,6 +198,16 @@ var products_filter2 = products_map.filter(function(products_map_true) {
 });
 console.log(products_filter2);
 console.log('-------------------------');
+
+//Includes (sử dung cho: string, array)
+var title = "Responsive web design";
+                                  //Nếu truyền vào số âm thì sẽ lấy độ dài mảng trừ cho số âm đó
+                                  //Vị trí bắt đầu tìm kiếm (index)
+console.log(title.includes('web'), 0); // -> true (trong biến title có chứa chuỗi là web nên trả về true)
+
+//VD 2:
+var courses = ['Javascript', 'PHP', 'Java'];
+console.log(courses.includes('PHP')); // -> true    
 //--------------------------------------------------------------------------------------
 
 

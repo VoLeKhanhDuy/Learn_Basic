@@ -26,4 +26,7 @@ console.log(myString3.trim()); // Loại bỏ khoảng trước đầu và cuố
 var frontEnd = "HTML, CSS, JS, REACT"; // Điểm chung , 
 console.log(frontEnd.split(", ")); // Tìm điểm chung giữa các chuỗi rồi đem vào split
 
-
+var name = "Vo Le Khanh Duy";
+var ho = name.slice(0, name.indexOf(" "));
+var ten = name.slice(name.lastIndexOf(" "), name.length);
+console.log(ho + ten);

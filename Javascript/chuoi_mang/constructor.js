@@ -1,5 +1,4 @@
 
-
 function User(firstName, lastName, Age, Address)
 {
     this.firstName = firstName;

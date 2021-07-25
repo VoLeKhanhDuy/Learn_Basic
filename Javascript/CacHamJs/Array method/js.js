@@ -4,7 +4,7 @@
     pop() : xóa phần tử cuối mảng và trả về PHẦN TỬ ĐÃ XÓA  (mảng ban đầu bị thay đổi)
     shift() : đẩy phần tử đầu tiên của mảng ra khỏi mảng (mảng ban đầu bị thay đổi)
     unshift() : đưa phần tử mới vào đầu mảng (trả về độ dài mới của mảng, mảng ban đầu bị thay đổi) 
-    toString() : chuyển array sang chuỗi 
+    toString() : chuyển mảng sang chuỗi 
     join() : chuyển các phần tử trong mảng thành chuỗi
     splice(vị_trí_đặt_con_trỏ, số_lượng_phần_tử_muốn_xóa)
     splice(vị_trí_đặt_con_trỏ, 0, 'Chuỗi_muốn_chèn_vào') : chèn hoặc thay đổi một phần tử cho mảng
@@ -39,11 +39,11 @@ var courses = [
 courses.forEach(function(course, index) { // duyệt qua từng phần tử của mảng
     console.log(index, course);
 });
-/* every: kiểm tra tất cả phần tử trong mảng thỏa điều kiện nào đó (trả về Bool) */
+/* every: kiểm tra nếu TẤT CẢ phần tử trong mảng thỏa điều kiện nào đó (trả về Bool) */
 var isFreeE = courses.every(function(course, index) { 
     return course.coin === 0; // nó sẽ kiểm tra từng phần tử của mảng đến khi có điều kiện sai thì trả ra False
 });
-/* some: kiểm tra MỘT phần tử trong mảng thỏa điều kiện thì trả về là True (trả về Bool) */
+/* some: kiểm tra nếu MỘT phần tử trong mảng thỏa điều kiện thì trả về là True (trả về Bool) */
 var isFreeS = courses.some(function(course, index) { 
     return course.coin === 0; // kiểm tra từng phần tử trong mảng, cái nào thỏa điều kiện thì trả ra True
 });
@@ -124,8 +124,8 @@ numbers_reduce.reduce(function(a, b) { // lấy 1 + 2 = 3 sau đó lấy 3 + 3 =
     return a + b;
 });
 // tham số của function: 
-//  - tham số 1 là kết quả của bước trước đó
-//  - tham số 2 là giá trị hiện tại
+//  - tham số 1 là kết quả của bước trước đó (biến lưu trữ)
+//  - tham số 2 là giá trị hiện tại (xem như giá trị khởi tạo)
 //BT dùng reduce tính tổng của đơn hàng
 var orders = [
     { name: 'A', quantity: 2, unitPrice: 100 },

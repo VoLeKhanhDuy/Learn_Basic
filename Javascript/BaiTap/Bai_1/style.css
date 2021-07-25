@@ -13,3 +13,8 @@
     transform: translateX(400px);
     transition: 1s;
 }
+
+/* Bài tập 2 */
+h1 {
+    margin-top: 20px;
+}

@@ -1,4 +1,5 @@
 // Destructuring: phân rã
+// Sử dụng cho Object và Array
 var array = ['Javascript', 'PHP', 'Ruby'];
 
 // Lấy ra từ thằng array lấy 3 phần từ a, b, c 
@@ -11,9 +12,9 @@ var [a, , c] = array; // -> Javascript Ruby
         - Sử dụng khi định nghĩa ra tham số
 */
 //Rest vẫn còn là mảng
-var [a, ...rest] = array; // -> Javascript ["Ruby"]
+var [a, ...rest] = array; // -> Javascript ["PHP", "Ruby"]
 
-//---------------------------------------------------
+//-----------------------------------------------------------------
 
 // OBJECT
 var course = {
@@ -25,9 +26,9 @@ var course = {
     }
 };
 var { name, price, image } = course; // -> Javascript 1000 image
-var { name, ...rest } = course // -> Javascript { price: 1000   image: "image" }
+var { name, ...rest } = course // -> Javascript { price: 1000, image: "image" }
     //parentName: tự đặt tên mới cho name
-    //để không bị trung với name trong children
+    //để không bị trùng với name trong children
 var { name: parentName, children: { name } } = course;
 var { name, description = 'Default description' } = course;
 

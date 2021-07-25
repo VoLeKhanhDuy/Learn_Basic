@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    background-color: white;
+    color: $gray-dark;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+//Button
+.button {
+    display: inline-block; // đưa các giá trị lên cùng 1 hàng nhưng vẫn giữ nguyên các thuộc tính của Block
+    font-size: 16px;
+    color: $gray-dark;
+    padding: 20px 45px;
+    border-radius: 10px;
+    outline: none; // đường viền xung quanh button
+    cursor: pointer;
+    background-color: transparent; // nền của button sẽ có màu trong suốt
+    line-height: normal; // khoảng cách giữa các dòng
+    &--primary {
+        color: white;
+        background-color: $primary-color;
+    }
+    &--outline {
+        border: 1px solid $gray-blur;
+        color: $gray-blur;
+    }
+}
+
+.block {
+    text-align: center;
+    //fcenterc
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 85px;
+    &-caption {
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+        padding: 0 5px;
+    }
+
+    &-caption:before {
+        left: 0;
+        transform: translateX(-100%) translateY(-50%);
+    }
+
+    &-caption::after {
+        right: 0;
+        transform: translateX(100%) translateY(50%);
+    }
+
+    &-caption:before,
+    &-caption:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 30px;
+        background-color: $primary-color;
+        //canh giữa theo chiều dọc
+        top: 50%;
+    }
+
+    &-heading {
+        text-transform: uppercase;
+        font-size: 50px;
+        line-height: 1.5;
+        span {
+            display: block;
+        }
+    }
+}

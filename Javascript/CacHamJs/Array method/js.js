@@ -9,6 +9,9 @@
     splice(vị_trí_đặt_con_trỏ, số_lượng_phần_tử_muốn_xóa)
     splice(vị_trí_đặt_con_trỏ, 0, 'Chuỗi_muốn_chèn_vào') : chèn hoặc thay đổi một phần tử cho mảng
     slice(vị_trí_bắt_đầu_cắt, vị_trí_kết_thúc_cắt) : cắt phần tử của mảng
+
+    e.target.closest('.btn'): là một phương thức của một DOM Element, giúp kiểm tra chính element đó hoặc là
+    cha của nó có chứa class (.btn) đó hay không
 */
 
 

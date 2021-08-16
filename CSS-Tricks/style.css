@@ -1,0 +1,41 @@
+/* ---- LÀM DẤU ... TRONG MỘT ĐOẠN VĂN ---- 
+==============================================
+    display: -webkit-box;
+    -webkit-line-clamp: 3; // số dòng muốn ...
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    word-break: break-word;
+*/
+
+/* ---- CÁC CÁCH CĂN GIỮA 1 ITEM ----
+=============================================
+Cách 1:
+    Thẻ cha
+    position: relative;
+
+    Thẻ con
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+Cách 2: 
+    line-hight: bằng với chiều cao của thẻ chứa nó;
+
+Cách 3: 
+    Thẻ cha 
+    display: flex;
+
+    Thẻ con
+    margin: auto;
+
+Cách 4:
+    Thẻ bao quanh item
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+*/

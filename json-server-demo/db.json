@@ -1,0 +1,31 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "ABC",
+      "createdAt": 1231321,
+      "updatedAt": 1231321
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "IPX",
+      "createdAt": 1231321,
+      "updatedAt": 1231321,
+      "cateoryId": 1,
+      "salePrice": 123
+    },
+    {
+      "id": 2,
+      "name": "IPX Prooo",
+      "createdAt": 1231321,
+      "updatedAt": 1231321,
+      "cateoryId": 1,
+      "salePrice": 123
+    }
+  ],
+  "profile": {
+    "name": "Dj"
+  }
+}

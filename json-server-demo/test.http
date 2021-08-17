@@ -1,0 +1,31 @@
+# Categories
+
+# @name getAllCategories
+GET http://localhost:3000/categories
+
+###
+
+# @name addNewCategory
+POST http://localhost:3000/categories
+Content-Type: application/json
+# Do trong file main.js co add san updatedAt thi phan add nay khong can them
+
+{
+    "name": "asjhdjahd"
+}
+
+###
+
+# @name updateCategory
+PATCH  http://localhost:3000/categories/2
+Content-Type: application/json
+
+{
+    "name": "AAAAAA"
+}
+
+###
+
+# @name removeCategory
+DELETE http://localhost:3000/categories/2
+Content-Type: application/json

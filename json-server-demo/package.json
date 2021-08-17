@@ -1,0 +1,22 @@
+{
+  "name": "json-server-demo",
+  "version": "1.0.0",
+  "description": "adaada",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main.js",
+    "start": "node main.js"
+  },
+  "keywords": [
+    "zxc"
+  ],
+  "author": "D",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

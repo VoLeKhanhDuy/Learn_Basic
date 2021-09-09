@@ -201,6 +201,53 @@ new Vue ({
 })
 ```
 
+## Slots
+
+- Dùng để truyền data từ bên ngoài vào trong component ~ `props`.
+
+VD:
+
+```js
+<template>
+  <component-slot>
+    <h1>Nội dung này sẽ được truyền vào chỗ thẻ Slot</h1>
+  </component-slot>
+</template>
+```
+
+Trong `component-slot`
+
+```js
+<template>
+  <slot></slot>
+</template>
+```
+
+VD2: Truyền nhiều Slot
+
+```js
+<template>
+  <component-slot>
+    <h1 slot="the-h1">Nội dung này sẽ được truyền vào chỗ thẻ Slot </h1>
+    <p slot="the-p">Nội dung thẻ p </p>
+  </component-slot>
+</template>
+```
+
+Trong `component-slot`
+
+```js
+<template>
+  <div class="slot-1">
+    <slot name="the-h1"></slot>
+  </div>
+
+  <div class="slot-2">
+    <slot name="the-p"></slot>
+  </div>
+</template>
+```
+
 ## Props
 
 - Sử dụng khi tiếp nhận data từ 1 component khác.
@@ -436,7 +483,7 @@ export const routes = [
 
 ## Before enter
 
-Khi sử dùng `before enter`, xử lý sẽ được chạy trước khi `router-view` được `render`. Sau đây là 3 chỗ có thể viết được.
+Khi sử dụng `before enter`, xử lý sẽ được chạy trước khi `router-view` được `render`. Sau đây là 3 chỗ có thể viết được.
 
 1. Global
 
@@ -489,3 +536,113 @@ beforeRouteEnter(to, from, next) {
     next():
 }
 ```
+
+## Lifecycle Hook
+
+- Là những phương thức được thực thi ở mỗi giao đoạn trong vòng đời của 1 component trong Vue.
+- Có 4 giai đoạn:
+  - Khởi tạo một đối tượng Vue
+  - Gắn kết vào DOM
+  - Cập nhật DOM khi dữ liệu thay đổi
+  - Hủy đối tượng
+- Các giao đoạn trên tương ứng với các Hooks:
+  - beforeCreate
+  - created
+  - beforeMount
+  - mounted
+  - beforeUpdate
+  - updated
+  - beforeDestroy
+  - destroyed
+
+### Giai đoạn khởi tạo
+
+- `beforeCreate`:
+  - Sẽ chạy mỗi khi khởi tạo 1 instance. Tại thời điểm này data, event chưa được thiết lập.
+  - Luôn được gọi và gọi đầu tiên.
+- `created`:
+  - Được chạy khi data, event được thiết lập.
+  - Có thể xử lý dữ liệu trả về từ `beforeCreate`.
+  - Không thể thực hiện thao tác với DOM tại bước này.
+
+Ví dụ:
+
+```js
+new Vue({
+  el: "#app",
+  data: {
+    content: "Lifecycle Hooks",
+  },
+  beforeCreate() {
+    console.log("before create");
+    console.log(this.content);
+  },
+  created() {
+    console.log("created");
+    console.log(this.content);
+  },
+});
+```
+
+Kết quả hiển thị:
+
+```
+  before create
+  undefined
+  created
+  Lifecycle Hooks
+```
+
+### Giai đoạn gắn kết DOM
+
+- `beforeMount`:
+  - Sẽ chạy sau khi data, event được thiết lập và trước khi gắn kết vào DOM.
+  - Tại giao đoạn này chúng ta vẫn chưa truy cập được phần tử trong DOM.
+- `mounted`:
+  - Giai đoạn này chúng ta được phép truy cập vào các phần tử trong DOM.
+
+Ví dụ:
+
+```js
+new Vue({
+  el: "#app",
+  data: {
+    content: "Lifecycle Hooks",
+  },
+  beforeMount() {
+    console.log("before mount");
+    console.log(this.$el.textContent);
+  },
+  mounted() {
+    console.log("mounted");
+    console.log(this.$el.textContent);
+  },
+});
+```
+
+Kết quả hiển thị:
+
+```
+  before mount
+  {{ content }}
+  mounted
+  Lifecycle Hooks
+```
+
+### Giai đoạn cập nhật DOM khi dữ liệu thay đổi
+
+- `beforeUpdate`:
+  - Sẽ chạy trước khi sự kiện update trên Component bắt đầu.
+  - Sau khi đối tượng đã được gắn vào DOM, khi data thay đổi và trước khi render, patch lại và hiển thị ra cho người dùng.
+- `update`:
+  - Chạy ngay sau beforeUpdate.
+  - Sử dụng khi cần truy cập DOM sau khi thay đổi thuộc tính.
+  - Dữ liệu ở `beforeUpdate` và `update` là như nhau.
+
+### Giai đoạn hủy instance
+
+- `beforeDetroy`:
+  - Là giai đoạn trước khi instance bị hủy.
+  - Đây là nơi để quản lý tài nguyên, xóa tài nguyên, dọn dẹp các component.
+- `detroyed`:
+  - Ở giai đoạn này mọi thành phần đã được hủy bỏ hết.

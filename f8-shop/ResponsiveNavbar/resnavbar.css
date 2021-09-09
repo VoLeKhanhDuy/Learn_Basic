@@ -81,10 +81,10 @@ article img {
     background-color: #fff;
 
     /* Khung trượt */
-  
-    transform: translateX(-100%);  
+
+    transform: translateX(-100%);
     opacity: 0;
-    transition: transform linear 0.2s, opacity linear 0.2s ;
+    transition: transform linear 0.2s, opacity linear 0.2s;
 }
 
 .nav__mobile-list {
@@ -108,11 +108,11 @@ article img {
     right: 1rem;
 }
 
-.nav__input:checked ~ .nav__overplay {  
+.nav__input:checked ~ .nav__overplay {
     display: block;
 }
 
-.nav__input:checked ~ .nav__mobile{
+.nav__input:checked ~ .nav__mobile {
     transform: translateX(0);
     opacity: 1;
 }

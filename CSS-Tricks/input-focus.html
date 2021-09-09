@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 50px;
+      }
+
+      .form-input {
+        border: 1px solid #eee;
+        border-radius: 4px;
+        width: 20%;
+        height: 40px;
+        padding: 0 20px;
+        transition: 0.25s ease;
+        outline: none;
+      }
+      .form-input:focus {
+        border-color: blue;
+      }
+      .form-field {
+        position: relative;
+      }
+      .form-label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 21px;
+        user-select: none; /* Không cho người dùng chọn vào thẻ label */
+        color: #999;
+        pointer-events: none;
+        transition: 0.25s ease;
+      }
+
+      .form-input:not(:placeholder-shown) + .form-label, /* Focus vào thì label không chạy xuống input nữa */
+      .form-input:focus + .form-label {
+        top: 0;
+        padding: 0 10px;
+        left: 11px;
+        display: inline-block;
+        background-color: white; /* Màu này phải trùng với màu nền */
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-field">
+      <input type="text" class="form-input" placeholder=" " />
+      <label for="name" class="form-label">Name</label>
+    </div>
+  </body>
+</html>

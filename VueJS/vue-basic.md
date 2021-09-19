@@ -75,8 +75,8 @@ new Vue ({
 ```html
 <button type="button" :class="['btn', {active: isActive}]">Button</button>
 <!--
-    If isActive == true => class="button btn active"
-    If isActive == false => class="button btn"
+    If isActive == true => class="btn active"
+    If isActive == false => class="btn"
 -->
 ```
 
@@ -87,8 +87,8 @@ Ta có thể dùng toán tử 3 ngôi trong `:class`
   Button
 </button>
 <!--
-    If isActive == true => class="button btn active"
-    If isActive == false => class="button btn disabled"
+    If isActive == true => class="btn active"
+    If isActive == false => class="btn disabled"
 -->
 ```
 
@@ -634,10 +634,10 @@ Kết quả hiển thị:
 - `beforeUpdate`:
   - Sẽ chạy trước khi sự kiện update trên Component bắt đầu.
   - Sau khi đối tượng đã được gắn vào DOM, khi data thay đổi và trước khi render, patch lại và hiển thị ra cho người dùng.
-- `update`:
+- `updated`:
   - Chạy ngay sau beforeUpdate.
   - Sử dụng khi cần truy cập DOM sau khi thay đổi thuộc tính.
-  - Dữ liệu ở `beforeUpdate` và `update` là như nhau.
+  - Dữ liệu ở `beforeUpdate` và `updated` là như nhau.
 
 ### Giai đoạn hủy instance
 

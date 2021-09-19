@@ -1,21 +1,25 @@
-/* BIND: ràng buộc */
+/* BIND: ràng buộc 
+   Đặc tính:
+   - Bind trả về một hàm mới
+   - Có thể nhận đối số như hàm ban đầu
+*/
 
 this.firstName = "Khánh";
 this.lastName = "Duy";
 
 const teacher = {
-    firstName: "Võ",
-    lastName: "Lê",
-    getFullName() {
-        return `${this.firstName} ${this.lastName}`;
-    }
-}
+  firstName: "Võ",
+  lastName: "Lê",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
 
 // Case 1:
 console.log(teacher.getFullName()); // => Võ Lê
 
 // Case 2:
-const getTecherName = teacher.getFullName
+const getTecherName = teacher.getFullName;
 /*
     getFullName ở đây không phải là gọi hàm vì không có ()
     Ở đây teacher.getFullName chưa được gọi hàm mà chỉ là truy cập vào function 
@@ -28,8 +32,10 @@ console.log(getTecherName); // => Khánh Duy
     nên nó lấy 2 biến ở Global 
 */
 
-/* đặt vấn đề: giả sử lúc code thì ta gán một hàm cho một biến để code ngắn gọn hơn thì ta sử dụng Bind */
-const getTecherName = teacher.getFullName.bind(teacher) // => Võ Lê
+/* đặt vấn đề: giả sử lúc code thì ta gán một hàm cho một biến để code ngắn gọn hơn thì ta sử dụng Bind 
+    bind thằng nào thì thằng đó là this
+*/
+const getTecherName = teacher.getFullName.bind(teacher); // => Võ Lê
 
 /* VD */
 
